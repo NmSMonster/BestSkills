@@ -17,3 +17,5 @@ jobs:
         run: pip install pyyaml
       - name: Validate skills, manifests, and cross-references
         run: python3 scripts/validate.py
+      - name: Eval skill-activation disambiguation
+        run: python3 scripts/eval_triggers.py

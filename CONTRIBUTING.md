@@ -66,11 +66,14 @@ Writing quality bar:
 
 ## Before you submit — the validation gate
 
-Run the repo validator (checks JSON, YAML frontmatter, name/folder match, description length, colon-safety, trigger presence, marketplace↔dirs, and cross-reference integrity):
+Run the repo validator (checks JSON, YAML frontmatter, name/folder match, description length, colon-safety, trigger presence, marketplace↔dirs, and cross-reference integrity) **and** the activation eval (checks each skill's description outscores its near-neighbours on representative prompts, so confusable clusters don't steal each other's triggers):
 
 ```bash
-python3 scripts/validate.py
+python3 scripts/validate.py        # structural gate
+python3 scripts/eval_triggers.py   # activation / disambiguation gate
 ```
+
+When you add a skill, add at least one case to `evals/triggers.yaml`: a realistic prompt, the skill that should fire (`expect`), and the near-neighbours it must outscore (`reject`). If the eval reports an INVERSION, a reject skill's description looks more relevant than yours — sharpen the trigger wording until yours wins. Ties on genuinely-adjacent skills are warnings the live model resolves on full semantics.
 
 A skill is not done until:
 - [ ] It encodes a discipline the model wouldn't reliably hold on its own (not a topic recap).

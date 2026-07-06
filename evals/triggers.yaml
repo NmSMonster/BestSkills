@@ -1,0 +1,201 @@
+# Skill activation evals.
+#
+# Each case is a realistic user prompt plus the skill that SHOULD fire and the
+# skills that should NOT (the near-neighbours it's most likely confused with).
+# These exist because at 45 skills the confusable clusters — research vs
+# due-diligence vs competitive-analysis vs market-analysis, and the writing
+# cluster — need their trigger boundaries pinned and regression-tested.
+#
+# The runner (scripts/eval_triggers.py) does not call a model; it checks that
+# each expected skill's description contains trigger language matching the
+# prompt's intent, and flags when a should-not skill's triggers overlap more
+# strongly than the expected one — a description-level disambiguation check.
+# A human/model eval can consume the same file for a live activation test.
+
+cases:
+  # --- research cluster (the most confusable, per review) ---
+  - prompt: "Research the state of the vector database market and tell me who the main players are"
+    expect: market-analysis
+    reject: [deep-research, competitive-analysis, due-diligence]
+    intent: [market, market size, players, landscape]
+
+  - prompt: "Compare Pinecone, Weaviate and Qdrant so we can pick one for our RAG stack"
+    expect: competitive-analysis
+    reject: [market-analysis, deep-research, due-diligence]
+    intent: [compare, vendors, pick, versus]
+
+  - prompt: "We're about to invest in this startup — vet the company, its founders and filings"
+    expect: due-diligence
+    reject: [competitive-analysis, deep-research, digital-footprint-audit]
+    intent: [vet, investment, company, background]
+
+  - prompt: "What does the research say about intermittent fasting and longevity?"
+    expect: deep-research
+    reject: [literature-review, fact-check, market-analysis]
+    intent: [research a topic, what does the evidence say]
+
+  - prompt: "Do a proper literature review of transformer efficiency papers with an evidence table"
+    expect: literature-review
+    reject: [deep-research, fact-check]
+    intent: [literature review, papers, survey of research]
+
+  - prompt: "Is it actually true that we lose most of our neurons after age 25?"
+    expect: fact-check
+    reject: [deep-research, literature-review]
+    intent: [is it true, verify claim, debunk]
+
+  - prompt: "Audit what's exposed about me online and how to lock it down"
+    expect: digital-footprint-audit
+    reject: [due-diligence, deep-research]
+    intent: [my own footprint, what's exposed about me, privacy]
+
+  - prompt: "Here's a CSV of our signups — what does the data say about churn?"
+    expect: data-analysis
+    reject: [deep-research, market-analysis]
+    intent: [dataset, what does the data say, analyze]
+
+  # --- writing / content cluster ---
+  - prompt: "Write the landing-page headline and copy to get people to start a free trial"
+    expect: copywriting
+    reject: [technical-writing, content-strategy, seo]
+    intent: [landing page, copy, headline, convert]
+
+  - prompt: "Write the README and API docs for our library"
+    expect: technical-writing
+    reject: [copywriting, content-strategy]
+    intent: [documentation, readme, api docs, explain]
+
+  - prompt: "Help me write a hard email telling a client we're raising prices"
+    expect: email-drafting
+    reject: [copywriting, technical-writing]
+    intent: [email, message, difficult email]
+
+  - prompt: "Plan what content we should publish this quarter and on which channels"
+    expect: content-strategy
+    reject: [copywriting, seo]
+    intent: [content plan, editorial calendar, channels]
+
+  - prompt: "Why isn't our article ranking on Google and how do we fix it?"
+    expect: seo
+    reject: [content-strategy, copywriting]
+    intent: [rank, google, search, keywords]
+
+  # --- programming cluster ---
+  - prompt: "This function throws a NullPointerException intermittently — help me find why"
+    expect: systematic-debugging
+    reject: [code-review, test-driven-development, performance-optimization]
+    intent: [bug, error, crash, find why, failing]
+
+  - prompt: "Review this PR before I merge it"
+    expect: code-review
+    reject: [systematic-debugging, security-audit]
+    intent: [review, pr, diff, before merge]
+
+  - prompt: "Check this code for security vulnerabilities before launch"
+    expect: security-audit
+    reject: [code-review, systematic-debugging]
+    intent: [security, vulnerabilities, is this secure]
+
+  - prompt: "This endpoint is slow — make it faster"
+    expect: performance-optimization
+    reject: [systematic-debugging, database-design]
+    intent: [slow, faster, optimize, latency]
+
+  - prompt: "Design the database schema for a multi-tenant billing system"
+    expect: database-design
+    reject: [api-design, performance-optimization]
+    intent: [schema, data model, tables, migration]
+
+  - prompt: "Help me build TDD-style with tests written first for this parser"
+    expect: test-driven-development
+    reject: [systematic-debugging, code-review]
+    intent: [tdd, tests first, red green]
+
+  # --- devops cluster ---
+  - prompt: "Set up a GitHub Actions pipeline to test and deploy on push"
+    expect: ci-cd
+    reject: [infrastructure-as-code, cloud-deployment, containerization]
+    intent: [pipeline, ci/cd, github actions, deploy on push]
+
+  - prompt: "Write a Dockerfile for this Node app and make the image small"
+    expect: containerization
+    reject: [ci-cd, cloud-deployment]
+    intent: [dockerfile, container, image size]
+
+  - prompt: "How should I deploy this app to the cloud and make it production-ready?"
+    expect: cloud-deployment
+    reject: [containerization, infrastructure-as-code, ci-cd]
+    intent: [deploy, cloud, hosting, production]
+
+  - prompt: "Write Terraform to provision our VPC and RDS reproducibly"
+    expect: infrastructure-as-code
+    reject: [cloud-deployment, ci-cd]
+    intent: [terraform, iac, provision, reproducible]
+
+  # --- orchestration / meta ---
+  - prompt: "This is a big vague task — help me break it down before we start"
+    expect: task-planning
+    reject: [self-verification, roadmap-planning]
+    intent: [break down, decompose, plan, where to start]
+
+  - prompt: "Double-check this change actually works before we call it done"
+    expect: self-verification
+    reject: [code-review, test-driven-development]
+    intent: [verify, double-check, before done, prove it works]
+
+  - prompt: "I'm building an agent that calls Claude with tools and RAG — how do I make it reliable?"
+    expect: building-with-claude
+    reject: [api-integration, task-planning]
+    intent: [llm app, agent, prompt, tool use, rag]
+
+  - prompt: "You're going to act on my accounts — sending emails and deleting files. Keep it safe and let me review and undo what you do"
+    expect: operator-governance
+    reject: [self-verification, workflow-automation]
+    intent: [act on my accounts, side effects, audit log, reversible, confirm before]
+
+  # --- business / product ---
+  - prompt: "How should we price our SaaS product?"
+    expect: pricing-strategy
+    reject: [market-analysis, financial-model, business-plan]
+    intent: [pricing, price, how much to charge]
+
+  - prompt: "Help me prepare for this contract negotiation"
+    expect: negotiation
+    reject: [pricing-strategy, business-plan]
+    intent: [negotiate, batna, deal terms]
+
+  - prompt: "Write a PRD for the new notifications feature"
+    expect: product-requirements
+    reject: [roadmap-planning, business-plan]
+    intent: [prd, spec, requirements, acceptance criteria]
+
+  - prompt: "Help me prioritize the backlog and decide what to build next quarter"
+    expect: roadmap-planning
+    reject: [product-requirements, task-planning]
+    intent: [roadmap, prioritize, backlog, what to build next]
+
+  - prompt: "Make this checkout screen less confusing to use"
+    expect: ui-ux-design
+    reject: [frontend-architecture, accessibility]
+    intent: [ux, usability, confusing, design the screen]
+
+  - prompt: "Make sure this web app is usable with a screen reader and keyboard"
+    expect: accessibility
+    reject: [ui-ux-design, frontend-architecture]
+    intent: [accessible, screen reader, wcag, keyboard]
+
+  # --- automation ---
+  - prompt: "Automate logging into this site and downloading the monthly report"
+    expect: web-automation
+    reject: [data-pipeline, workflow-automation, api-integration]
+    intent: [browser, website, log in, click, playwright]
+
+  - prompt: "Scrape these 5000 product pages into a clean CSV, resumable if it crashes"
+    expect: data-pipeline
+    reject: [web-automation, workflow-automation]
+    intent: [scrape at scale, pipeline, export csv, resumable]
+
+  - prompt: "Run this check every morning and alert me if the number changed"
+    expect: workflow-automation
+    reject: [data-pipeline, api-integration]
+    intent: [schedule, cron, every morning, alert on change]

@@ -99,6 +99,7 @@ cp -r plugins/programming-pro/skills/systematic-debugging .claude/skills/
 | `task-planning` | Scope → decompose into verifiable steps → sequence by risk/dependency → decide do-vs-delegate and when to ask; re-plan on contact with reality |
 | `self-verification` | Prove-don't-assume before "done": exercise the work, run the pre-delivery checklist, report honest confidence and what wasn't checked |
 | `building-with-claude` | LLM app engineering: prompt design, structured output, tool use, agents, RAG, and the eval loop that separates a demo from a product |
+| `operator-governance` | Acting safely on the user's accounts: authority scoping, action-tier gates, confirm-before-irreversible, an audit trail, and rollback by design |
 
 ### 📣 marketing-pro
 
@@ -138,13 +139,17 @@ These skills follow the [Agent Skills](https://code.claude.com/docs/en/skills) f
 
 ## Quality & validation
 
-The bar that produced these skills is documented in [CONTRIBUTING.md](CONTRIBUTING.md) and **enforced automatically**. `scripts/validate.py` checks every manifest and skill — JSON/YAML validity, `name`↔folder match, description length and colon-safety, presence of a trigger clause, reference-file existence, and cross-reference integrity — and runs in CI on every push and PR (`.github/workflows/validate.yml`).
+The bar that produced these skills is documented in [CONTRIBUTING.md](CONTRIBUTING.md) and **enforced automatically** in CI on every push and PR (`.github/workflows/validate.yml`):
+
+- **`scripts/validate.py`** — structural gate: JSON/YAML validity, `name`↔folder match, description length and colon-safety, presence of a trigger clause, reference-file existence, and cross-reference integrity.
+- **`scripts/eval_triggers.py`** — activation gate: for 35+ representative prompts across the confusable clusters (research vs due-diligence vs competitive-analysis vs market-analysis; the writing cluster; devops; planning), it checks the *right* skill's description outscores its near-neighbours, so skills don't steal each other's triggers. Cases live in `evals/triggers.yaml`.
 
 ```bash
-python3 scripts/validate.py   # → Scanned 45 skills across 9 packs … ✓ All checks passed.
+python3 scripts/validate.py        # → Scanned 46 skills across 9 packs … ✓ All checks passed.
+python3 scripts/eval_triggers.py   # → Ran 36 activation cases … ✓ Every expected skill outscores its near-neighbours.
 ```
 
-New skills are held to the same standard: encode a discipline the model wouldn't otherwise hold, not a topic recap.
+New skills are held to the same standard: encode a discipline the model wouldn't otherwise hold, not a topic recap — and ship with an activation eval case.
 
 ## Repository layout
 

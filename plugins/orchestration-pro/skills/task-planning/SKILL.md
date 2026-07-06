@@ -1,6 +1,6 @@
 ---
 name: task-planning
-description: Planning and decomposing a complex, multi-step, or ambiguous task before executing — scoping, sequencing, identifying unknowns, deciding what to do yourself vs. delegate, and when to check with the user. Use when a request is large, vague, spans multiple steps or files, has unclear requirements, or when jumping straight to code would risk building the wrong thing. The meta-skill that decides how every other skill gets applied.
+description: Planning and decomposing a complex, multi-step, or ambiguous task before executing — scoping, sequencing, identifying unknowns, deciding what to do yourself vs. delegate, and when to check with the user. Use when a request is large, vague, or multi-step and you need to break it down, decompose it, or plan the steps before executing — or when jumping straight to code would risk building the wrong thing. This is for planning how to execute one task now; for prioritizing a product backlog over time, use roadmap-planning. The meta-skill that decides how every other skill gets applied.
 ---
 
 # Task Planning

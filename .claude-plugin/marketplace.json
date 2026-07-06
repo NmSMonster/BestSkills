@@ -4,8 +4,8 @@
     "name": "NmSMonster"
   },
   "metadata": {
-    "description": "Professional-grade Agent Skills for Claude Opus 4.8 and Sonnet 5: programming, research, web automation, and business.",
-    "version": "1.0.0"
+    "description": "Professional-grade Agent Skills for Claude Opus 4.8 and Sonnet 5 across nine domains — programming, DevOps, research, business, orchestration, marketing, product, communication, and web automation. Every skill is validated in CI and encodes an enforceable working discipline.",
+    "version": "1.1.0"
   },
   "plugins": [
     {

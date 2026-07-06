@@ -7,7 +7,7 @@ description: Analyzing a dataset to answer a question honestly — cleaning, exp
 
 The job is a *defensible answer to a question*, not a gallery of charts. Most bad analysis fails in one of two places: trusting dirty data, or torturing clean data into a conclusion it doesn't support. This workflow guards both.
 
-Statistical pitfalls and how to avoid them: `references/statistical-pitfalls.md`. For any visualization, also load the `dataviz` skill before drawing.
+Statistical pitfalls and how to avoid them: `references/statistical-pitfalls.md`. For any visualization, also load Claude's built-in `dataviz` skill if available (the honest-charting principles below stand alone if it isn't).
 
 ## Phase 1 — Question before data
 
@@ -48,7 +48,7 @@ Output of this phase is a short **data-quality note**: what's dirty, what you di
 
 - Lead with the answer to the Phase-1 question in one or two sentences, then the evidence.
 - Every number carries its context: n, time window, definition, and source.
-- Charts follow the `dataviz` skill: honest axes (no truncated y-axis to exaggerate), right chart for the relationship, labeled, absolute + relative shown.
+- Charts follow honest-charting rules (Claude's built-in `dataviz` skill if present): honest axes (no truncated y-axis to exaggerate), right chart for the relationship, labeled, absolute + relative shown.
 - Separate **what the data shows** from **what you infer** from **what you recommend** — three different confidence levels, visibly distinct.
 - State the caveats that would change the conclusion, and what data would resolve them.
 

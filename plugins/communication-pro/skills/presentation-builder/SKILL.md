@@ -30,7 +30,7 @@ The cardinal rule: **the audience can either read your slide or listen to you �
 - **Show, don't list.** Replace bullet-walls with: a chart that makes the trend obvious, a diagram of the system, one big number, a photo, a before/after. Visuals carry what prose can't; that's the entire reason for slides.
 - **Minimal text.** A few words as an anchor, not sentences you'll read. If you need a paragraph, it belongs in a handout, not on screen. Kill the sub-sub-bullets.
 - **Big and legible.** Large type (readable from the back), high contrast, one accent color, generous whitespace. The person in the last row is your design constraint.
-- **Data slides** follow the `dataviz` skill: honest axes, the right chart, one message per chart, labeled directly. A chart the audience can't read in five seconds has failed.
+- **Data slides** follow honest-charting rules (Claude's built-in `dataviz` skill if present): honest axes, the right chart, one message per chart, labeled directly. A chart the audience can't read in five seconds has failed.
 - **Progressive reveal** for complex ideas — build a diagram piece by piece rather than dropping a finished tangle they'll read instead of listening.
 
 ## Step 3 — Delivery (the slides are half the talk)

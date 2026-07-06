@@ -1,6 +1,6 @@
 ---
 name: literature-review
-description: Structured review and synthesis of academic papers, technical reports, or a body of documents on a topic — thematic synthesis, evidence tables, and gap analysis. Use when the user asks for a literature review, survey of research, "what does the research say about…", state-of-the-art summary, related-work section, or synthesis across a set of provided papers/PDFs.
+description: Structured review and synthesis of academic papers, technical reports, or a body of documents on a topic — thematic synthesis, evidence tables, and gap analysis. Use when the user asks for a literature review, a survey of academic research or papers, a state-of-the-art summary, a related-work section, an evidence table across studies, or synthesis across a set of provided papers/PDFs. For a general researched answer to a topic rather than a formal synthesis of the scholarly literature, use deep-research instead.
 ---
 
 # Literature Review

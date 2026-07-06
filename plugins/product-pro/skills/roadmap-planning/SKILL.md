@@ -1,6 +1,6 @@
 ---
 name: roadmap-planning
-description: Prioritizing and sequencing what to build — product roadmaps, feature prioritization, backlog ordering, and deciding what to do next and what to cut. Use when the user asks to build a roadmap, prioritize features/backlog, decide what to work on next, plan a quarter/release, choose between competing initiatives, or say no to scope. Grounded in outcomes and prioritization frameworks, not a wishlist with dates.
+description: Prioritizing and sequencing what to build over time — product roadmaps, feature prioritization, backlog ordering, and deciding which features or initiatives to build next and what to cut. Use when the user asks to build a product roadmap, prioritize a features/backlog list, decide which initiatives to build next, plan a quarter/release, choose between competing initiatives, or say no to scope. For breaking a single task into steps to execute now, use task-planning. Grounded in outcomes and prioritization frameworks, not a wishlist with dates.
 ---
 
 # Roadmap Planning

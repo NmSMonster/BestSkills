@@ -1,6 +1,6 @@
 ---
 name: deep-research
-description: Multi-phase web research with source triangulation, citations, and stated confidence — for any nontrivial question requiring investigation across multiple sources. Use when the user asks to research a topic, compare options, investigate a market/technology/company/claim, produce a report or briefing, or asks a question whose answer isn't reliably in one place. Not for simple lookups a single search answers.
+description: Multi-phase web research with source triangulation, citations, and stated confidence — for any nontrivial question requiring investigation across multiple sources. Use when the user asks to research a topic, find out what the research or evidence says about something, compare options, investigate a market/technology/company/claim, produce a report or briefing, or asks a question whose answer isn't reliably in one place. Not for simple lookups a single search answers, and not for a formal synthesis of academic papers (use literature-review).
 ---
 
 # Deep Research
