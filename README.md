@@ -48,6 +48,7 @@ cp -r plugins/programming-pro/skills/systematic-debugging .claude/skills/
 | `fact-check` | Claim decomposition, tracing to primary sources, explicit verdicts incl. "misleading" with the trick named |
 | `literature-review` | Thematic synthesis across papers, evidence tables, consensus vs. contested, gap analysis |
 | `competitive-analysis` | Decision-framed competitor teardowns: facts-only matrices, positioning reads, strategic implications |
+| `digital-footprint-audit` | **Defensive, consent-gated** OSINT self-audit: map your own public exposure, score it (sensitivity × discoverability × removability + aggregation risk), and get a prioritized removal + monitoring plan. Includes source-map, risk-scoring, and remediation-playbook references |
 
 ### 🤖 automation-pro
 
@@ -75,6 +76,7 @@ These skills follow the [Agent Skills](https://code.claude.com/docs/en/skills) f
 - **Progressive disclosure** — heavy reference material (source-evaluation rubric, Playwright patterns) lives in `references/` and loads only when needed.
 - **Honest-output bias** — every skill requires shown work, cited sources, stated confidence, or before/after numbers. No skill lets the model assert what it didn't verify.
 - **Composability** — skills reference each other where workflows connect (e.g. `business-plan` → `financial-model` → `pitch-deck`).
+- **Safety by design** — capability-sensitive skills are consent-gated and defensive. `digital-footprint-audit` audits *your own* (or an explicitly authorized) footprint to shrink it; it refuses to profile non-consenting third parties. The line is whose footprint, with whose consent, toward defense vs. targeting.
 
 ## Repository layout
 
