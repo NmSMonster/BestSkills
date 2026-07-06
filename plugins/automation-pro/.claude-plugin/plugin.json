@@ -1,0 +1,6 @@
+{
+  "name": "automation-pro",
+  "version": "1.0.0",
+  "description": "Automation that ships: browser automation for any website, resilient scraping pipelines, and scheduled workflows.",
+  "author": { "name": "NmSMonster" }
+}

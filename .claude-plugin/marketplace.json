@@ -1,0 +1,44 @@
+{
+  "name": "bestskills",
+  "owner": {
+    "name": "NmSMonster"
+  },
+  "metadata": {
+    "description": "Professional-grade Agent Skills for Claude Opus 4.8 and Sonnet 5: programming, research, web automation, and business.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "programming-pro",
+      "source": "./plugins/programming-pro",
+      "description": "Engineering discipline for Claude: systematic debugging, TDD, safe refactoring, API design, and performance work.",
+      "version": "1.0.0",
+      "author": { "name": "NmSMonster" },
+      "keywords": ["programming", "debugging", "tdd", "refactoring", "api", "performance"]
+    },
+    {
+      "name": "research-pro",
+      "source": "./plugins/research-pro",
+      "description": "Rigorous research workflows: deep multi-source research, fact-checking, literature reviews, and competitive analysis.",
+      "version": "1.0.0",
+      "author": { "name": "NmSMonster" },
+      "keywords": ["research", "fact-check", "literature-review", "competitive-analysis"]
+    },
+    {
+      "name": "automation-pro",
+      "source": "./plugins/automation-pro",
+      "description": "Automation that ships: browser automation for any website, resilient scraping pipelines, and scheduled workflows.",
+      "version": "1.0.0",
+      "author": { "name": "NmSMonster" },
+      "keywords": ["automation", "playwright", "browser", "scraping", "cron", "workflows"]
+    },
+    {
+      "name": "business-pro",
+      "source": "./plugins/business-pro",
+      "description": "Operator-grade business analysis: market sizing, business plans, financial models, and pitch materials.",
+      "version": "1.0.0",
+      "author": { "name": "NmSMonster" },
+      "keywords": ["business", "market-analysis", "financial-model", "pitch", "strategy"]
+    }
+  ]
+}

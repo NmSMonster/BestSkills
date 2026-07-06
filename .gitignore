@@ -1,0 +1,8 @@
+# session/auth artifacts from web-automation examples
+auth.json
+*.storage-state.json
+
+# local scratch
+*.log
+.DS_Store
+__pycache__/
