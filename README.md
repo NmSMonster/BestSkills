@@ -1,6 +1,6 @@
 # BestSkills
 
-Professional-grade **Agent Skills** for Claude (Opus 4.8, Sonnet 5, and newer) — eight plugin packs covering programming, research, web automation, business, communication, orchestration, marketing, and product. Each skill encodes a complete working discipline: workflow, quality bars, anti-patterns, and deliverable formats — not just tips.
+Professional-grade **Agent Skills** for Claude (Opus 4.8, Sonnet 5, and newer) — nine plugin packs covering programming, research, web automation, business, communication, orchestration, marketing, product, and DevOps. Each skill encodes a complete working discipline: workflow, quality bars, anti-patterns, and deliverable formats — not just tips.
 
 ## Installation
 
@@ -16,6 +16,7 @@ Professional-grade **Agent Skills** for Claude (Opus 4.8, Sonnet 5, and newer) �
 /plugin install orchestration-pro@bestskills
 /plugin install marketing-pro@bestskills
 /plugin install product-pro@bestskills
+/plugin install devops-pro@bestskills
 ```
 
 Install only the packs you need — each is independent.
@@ -115,6 +116,15 @@ cp -r plugins/programming-pro/skills/systematic-debugging .claude/skills/
 | `product-requirements` | PRDs that start from the problem and success metric, explicit non-goals, prioritized requirements, testable acceptance criteria |
 | `roadmap-planning` | Prioritize by outcome (RICE / value-effort), sequence for risk and early value, Now/Next/Later honesty, and saying no clearly |
 
+### 🚀 devops-pro
+
+| Skill | What it enforces |
+|---|---|
+| `ci-cd` | Fast fail-first pipelines: cheap checks first, build-once/promote, progressive rollout with rollback, no retry-hiding flaky tests |
+| `containerization` | Small secure images: multi-stage builds, non-root, no baked secrets, cache-ordered layers, PID-1 signal handling |
+| `cloud-deployment` | Right-sized compute (PaaS by default), stateless instances, least-privilege IAM, and the production-readiness checklist people skip |
+| `infrastructure-as-code` | Declarative, reviewed-via-PR infra: always read the plan, guard destroys, protect and lock state, no secrets in code |
+
 ## Design principles
 
 These skills follow the [Agent Skills](https://code.claude.com/docs/en/skills) format and are written **for the model, not about the topic**:
@@ -141,11 +151,12 @@ plugins/
   orchestration-pro/ …
   marketing-pro/ …
   product-pro/ …
+  devops-pro/ …
 ```
 
 ## Po polsku (skrót)
 
-Kolekcja profesjonalnych skilli dla Claude w ośmiu pakietach: **programowanie**, **research**, **automatyzacja** (w tym poruszanie się po dowolnych stronach www przez Playwright), **biznes**, **komunikacja**, **orkiestracja** (meta-warstwa: planowanie, weryfikacja, budowanie z Claude), **marketing** i **produkt**. Instalacja: `/plugin marketplace add nmsmonster/bestskills`, a potem `/plugin install <pakiet>@bestskills` — albo skopiuj wybrany folder skilla do `~/.claude/skills/`. Każdy skill to kompletna metodyka pracy z twardymi zasadami jakości, nie zbiór porad. Claude sam wybiera odpowiedni skill na podstawie pola `description` z nagłówka — dlatego opisy są nasycone wyzwalaczami „użyj gdy…".
+Kolekcja profesjonalnych skilli dla Claude w dziewięciu pakietach: **programowanie**, **research**, **automatyzacja** (w tym poruszanie się po dowolnych stronach www przez Playwright), **biznes**, **komunikacja**, **orkiestracja** (meta-warstwa: planowanie, weryfikacja, budowanie z Claude), **marketing**, **produkt** i **DevOps** (CI/CD, kontenery, wdrożenia, infrastruktura jako kod). Instalacja: `/plugin marketplace add nmsmonster/bestskills`, a potem `/plugin install <pakiet>@bestskills` — albo skopiuj wybrany folder skilla do `~/.claude/skills/`. Każdy skill to kompletna metodyka pracy z twardymi zasadami jakości, nie zbiór porad. Claude sam wybiera odpowiedni skill na podstawie pola `description` z nagłówka — dlatego opisy są nasycone wyzwalaczami „użyj gdy…".
 
 ## License
 

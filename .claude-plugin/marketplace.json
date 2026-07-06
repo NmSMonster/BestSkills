@@ -71,6 +71,14 @@
       "version": "1.0.0",
       "author": { "name": "NmSMonster" },
       "keywords": ["product", "ux", "ui-design", "prd", "roadmap", "prioritization"]
+    },
+    {
+      "name": "devops-pro",
+      "source": "./plugins/devops-pro",
+      "description": "Ship and run what you build: CI/CD pipelines, containerization, cloud deployment, and infrastructure as code — with safety, rollback, and observability built in.",
+      "version": "1.0.0",
+      "author": { "name": "NmSMonster" },
+      "keywords": ["devops", "ci-cd", "docker", "cloud", "terraform", "infrastructure", "deployment"]
     }
   ]
 }

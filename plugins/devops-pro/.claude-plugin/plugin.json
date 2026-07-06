@@ -1,0 +1,6 @@
+{
+  "name": "devops-pro",
+  "version": "1.0.0",
+  "description": "Ship and run what you build: CI/CD pipelines, containerization, cloud deployment, and infrastructure as code — with safety, rollback, and observability built in.",
+  "author": { "name": "NmSMonster" }
+}
