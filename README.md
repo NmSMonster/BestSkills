@@ -1,6 +1,6 @@
 # BestSkills
 
-Professional-grade **Agent Skills** for Claude (Opus 4.8, Sonnet 5, and newer) — five plugin packs covering programming, research, web automation, business, and communication. Each skill encodes a complete working discipline: workflow, quality bars, anti-patterns, and deliverable formats — not just tips.
+Professional-grade **Agent Skills** for Claude (Opus 4.8, Sonnet 5, and newer) — eight plugin packs covering programming, research, web automation, business, communication, orchestration, marketing, and product. Each skill encodes a complete working discipline: workflow, quality bars, anti-patterns, and deliverable formats — not just tips.
 
 ## Installation
 
@@ -13,6 +13,9 @@ Professional-grade **Agent Skills** for Claude (Opus 4.8, Sonnet 5, and newer) �
 /plugin install automation-pro@bestskills
 /plugin install business-pro@bestskills
 /plugin install communication-pro@bestskills
+/plugin install orchestration-pro@bestskills
+/plugin install marketing-pro@bestskills
+/plugin install product-pro@bestskills
 ```
 
 Install only the packs you need — each is independent.
@@ -44,6 +47,8 @@ cp -r plugins/programming-pro/skills/systematic-debugging .claude/skills/
 | `security-audit` | Defensive vuln review by trust boundary: injection, authz/IDOR, secrets, crypto, deps — each finding with an exploit scenario and a fix |
 | `database-design` | Schema modeling from access patterns, indexing verified with EXPLAIN, zero-downtime expand→contract migrations |
 | `git-workflow` | Rebases, conflict resolution, history rewriting, and recovery — reflog-first, never lose committed work |
+| `frontend-architecture` | Component boundaries and correct state placement (local/shared/server/URL), data-fetching lifecycle, feature-based structure |
+| `accessibility` | WCAG-AA a11y: semantic HTML first, keyboard + screen-reader support, contrast, tested with keyboard and SR — not just an automated scan |
 
 ### 🔎 research-pro
 
@@ -86,6 +91,30 @@ cp -r plugins/programming-pro/skills/systematic-debugging .claude/skills/
 | `meeting-notes` | Transcript → decisions, owned action items, open questions; compression with flagged gaps, not a verbatim retelling |
 | `presentation-builder` | Talks as spoken arguments: tension→resolution arc, one takeaway, show-don't-list slides, delivery notes |
 
+### 🧭 orchestration-pro (the meta-layer — multiplies every other skill)
+
+| Skill | What it enforces |
+|---|---|
+| `task-planning` | Scope → decompose into verifiable steps → sequence by risk/dependency → decide do-vs-delegate and when to ask; re-plan on contact with reality |
+| `self-verification` | Prove-don't-assume before "done": exercise the work, run the pre-delivery checklist, report honest confidence and what wasn't checked |
+| `building-with-claude` | LLM app engineering: prompt design, structured output, tool use, agents, RAG, and the eval loop that separates a demo from a product |
+
+### 📣 marketing-pro
+
+| Skill | What it enforces |
+|---|---|
+| `copywriting` | Conversion copy: benefits over features (the "so what?" test), PAS/AIDA structure, headlines, one CTA, proof — clear beats clever |
+| `seo` | Rank by satisfying search intent: keyword+intent research, on-page structure, E-E-A-T, technical SEO — no keyword-stuffing tricks |
+| `content-strategy` | Goal + audience → pillars, channel mix, sustainable cadence, and the distribution/repurposing half everyone skips |
+
+### 🎯 product-pro
+
+| Skill | What it enforces |
+|---|---|
+| `ui-ux-design` | Flow before screens, Nielsen heuristics, visual hierarchy, every state (empty/loading/error), forms — usability over decoration |
+| `product-requirements` | PRDs that start from the problem and success metric, explicit non-goals, prioritized requirements, testable acceptance criteria |
+| `roadmap-planning` | Prioritize by outcome (RICE / value-effort), sequence for risk and early value, Now/Next/Later honesty, and saying no clearly |
+
 ## Design principles
 
 These skills follow the [Agent Skills](https://code.claude.com/docs/en/skills) format and are written **for the model, not about the topic**:
@@ -109,11 +138,14 @@ plugins/
   automation-pro/ …
   business-pro/ …
   communication-pro/ …
+  orchestration-pro/ …
+  marketing-pro/ …
+  product-pro/ …
 ```
 
 ## Po polsku (skrót)
 
-Kolekcja profesjonalnych skilli dla Claude w pięciu pakietach: **programowanie**, **research**, **automatyzacja** (w tym poruszanie się po dowolnych stronach www przez Playwright), **biznes** i **komunikacja**. Instalacja: `/plugin marketplace add nmsmonster/bestskills`, a potem `/plugin install <pakiet>@bestskills` — albo skopiuj wybrany folder skilla do `~/.claude/skills/`. Każdy skill to kompletna metodyka pracy z twardymi zasadami jakości, nie zbiór porad. Claude sam wybiera odpowiedni skill na podstawie pola `description` z nagłówka — dlatego opisy są nasycone wyzwalaczami „użyj gdy…".
+Kolekcja profesjonalnych skilli dla Claude w ośmiu pakietach: **programowanie**, **research**, **automatyzacja** (w tym poruszanie się po dowolnych stronach www przez Playwright), **biznes**, **komunikacja**, **orkiestracja** (meta-warstwa: planowanie, weryfikacja, budowanie z Claude), **marketing** i **produkt**. Instalacja: `/plugin marketplace add nmsmonster/bestskills`, a potem `/plugin install <pakiet>@bestskills` — albo skopiuj wybrany folder skilla do `~/.claude/skills/`. Każdy skill to kompletna metodyka pracy z twardymi zasadami jakości, nie zbiór porad. Claude sam wybiera odpowiedni skill na podstawie pola `description` z nagłówka — dlatego opisy są nasycone wyzwalaczami „użyj gdy…".
 
 ## License
 

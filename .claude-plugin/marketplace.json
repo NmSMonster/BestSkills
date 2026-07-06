@@ -47,6 +47,30 @@
       "version": "1.0.0",
       "author": { "name": "NmSMonster" },
       "keywords": ["writing", "documentation", "email", "meeting-notes", "presentation", "communication"]
+    },
+    {
+      "name": "orchestration-pro",
+      "source": "./plugins/orchestration-pro",
+      "description": "The meta-layer that multiplies every other skill: planning and decomposing complex tasks, self-verifying work before delivery, and building effectively with Claude itself.",
+      "version": "1.0.0",
+      "author": { "name": "NmSMonster" },
+      "keywords": ["planning", "task-decomposition", "verification", "agents", "prompt-engineering", "meta"]
+    },
+    {
+      "name": "marketing-pro",
+      "source": "./plugins/marketing-pro",
+      "description": "Content and marketing that converts: persuasive copywriting, search-optimized content, and content strategy built on audience and goals.",
+      "version": "1.0.0",
+      "author": { "name": "NmSMonster" },
+      "keywords": ["marketing", "copywriting", "seo", "content-strategy", "growth"]
+    },
+    {
+      "name": "product-pro",
+      "source": "./plugins/product-pro",
+      "description": "Product craft: UI/UX design principles, writing PRDs that align teams, and prioritizing a roadmap around outcomes.",
+      "version": "1.0.0",
+      "author": { "name": "NmSMonster" },
+      "keywords": ["product", "ux", "ui-design", "prd", "roadmap", "prioritization"]
     }
   ]
 }
