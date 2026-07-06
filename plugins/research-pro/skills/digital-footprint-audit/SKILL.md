@@ -1,6 +1,6 @@
 ---
 name: digital-footprint-audit
-description: Comprehensive OSINT self-audit — map everything publicly discoverable about YOURSELF (or a person/organization that has explicitly authorized it), score the exposure and its real-world risk, then produce a prioritized remediation and monitoring plan. Use when the user wants to audit their own digital footprint, find what's exposed about them online, do pre-employment/pre-publicity privacy hardening, check for doxxing exposure, run a personal or executive privacy review, or reduce their attack surface. This is a DEFENSIVE, consent-gated skill: it exists to help people find and shrink their own exposure, not to profile third parties.
+description: Comprehensive OSINT self-audit — map everything publicly discoverable about YOURSELF (or a person/organization that has explicitly authorized it), score the exposure and its real-world risk, then produce a prioritized remediation and monitoring plan. Use when the user wants to audit their own digital footprint, find what's exposed about them online, do pre-employment/pre-publicity privacy hardening, check for doxxing exposure, run a personal or executive privacy review, or reduce their attack surface. This is a DEFENSIVE, consent-gated skill — it exists to help people find and shrink their own exposure, not to profile third parties.
 ---
 
 # Digital Footprint Audit
