@@ -136,6 +136,16 @@ These skills follow the [Agent Skills](https://code.claude.com/docs/en/skills) f
 - **Composability** — skills reference each other where workflows connect (e.g. `business-plan` → `financial-model` → `pitch-deck`).
 - **Safety by design** — capability-sensitive skills are consent-gated and defensive. `digital-footprint-audit` audits *your own* (or an explicitly authorized) footprint to shrink it; it refuses to profile non-consenting third parties. The line is whose footprint, with whose consent, toward defense vs. targeting.
 
+## Quality & validation
+
+The bar that produced these skills is documented in [CONTRIBUTING.md](CONTRIBUTING.md) and **enforced automatically**. `scripts/validate.py` checks every manifest and skill — JSON/YAML validity, `name`↔folder match, description length and colon-safety, presence of a trigger clause, reference-file existence, and cross-reference integrity — and runs in CI on every push and PR (`.github/workflows/validate.yml`).
+
+```bash
+python3 scripts/validate.py   # → Scanned 45 skills across 9 packs … ✓ All checks passed.
+```
+
+New skills are held to the same standard: encode a discipline the model wouldn't otherwise hold, not a topic recap.
+
 ## Repository layout
 
 ```
