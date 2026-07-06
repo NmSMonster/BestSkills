@@ -35,10 +35,18 @@
     {
       "name": "business-pro",
       "source": "./plugins/business-pro",
-      "description": "Operator-grade business analysis: market sizing, business plans, financial models, and pitch materials.",
+      "description": "Operator-grade business analysis: market sizing, business plans, financial models, pitch materials, pricing, and negotiation.",
       "version": "1.0.0",
       "author": { "name": "NmSMonster" },
-      "keywords": ["business", "market-analysis", "financial-model", "pitch", "strategy"]
+      "keywords": ["business", "market-analysis", "financial-model", "pitch", "pricing", "negotiation", "strategy"]
+    },
+    {
+      "name": "communication-pro",
+      "source": "./plugins/communication-pro",
+      "description": "Everyday professional communication done well: technical writing, difficult emails, meeting notes to decisions, and structured presentations.",
+      "version": "1.0.0",
+      "author": { "name": "NmSMonster" },
+      "keywords": ["writing", "documentation", "email", "meeting-notes", "presentation", "communication"]
     }
   ]
 }

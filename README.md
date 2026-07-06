@@ -1,6 +1,6 @@
 # BestSkills
 
-Professional-grade **Agent Skills** for Claude (Opus 4.8, Sonnet 5, and newer) — four plugin packs covering programming, research, web automation, and business. Each skill encodes a complete working discipline: workflow, quality bars, anti-patterns, and deliverable formats — not just tips.
+Professional-grade **Agent Skills** for Claude (Opus 4.8, Sonnet 5, and newer) — five plugin packs covering programming, research, web automation, business, and communication. Each skill encodes a complete working discipline: workflow, quality bars, anti-patterns, and deliverable formats — not just tips.
 
 ## Installation
 
@@ -12,6 +12,7 @@ Professional-grade **Agent Skills** for Claude (Opus 4.8, Sonnet 5, and newer) �
 /plugin install research-pro@bestskills
 /plugin install automation-pro@bestskills
 /plugin install business-pro@bestskills
+/plugin install communication-pro@bestskills
 ```
 
 Install only the packs you need — each is independent.
@@ -37,8 +38,12 @@ cp -r plugins/programming-pro/skills/systematic-debugging .claude/skills/
 | `systematic-debugging` | Hypothesis-driven debugging: reproduce first, bisect, prove the root cause, prove the fix |
 | `test-driven-development` | Red–green–refactor discipline, test-case ordering, what makes tests good, what not to test |
 | `safe-refactoring` | Behavior-preserving changes: characterization tests, one mechanical step at a time, revert-don't-debug |
+| `code-review` | Triaged diff review: read-order by consequence, defect-hunting mindset, severity levels, comments that land; per-language checklists |
 | `api-design` | REST/GraphQL/library contracts: consistency, errors, pagination, versioning, compatibility |
 | `performance-optimization` | Measure → profile → fix the biggest cost → re-measure; the leverage ladder; no blind micro-optimization |
+| `security-audit` | Defensive vuln review by trust boundary: injection, authz/IDOR, secrets, crypto, deps — each finding with an exploit scenario and a fix |
+| `database-design` | Schema modeling from access patterns, indexing verified with EXPLAIN, zero-downtime expand→contract migrations |
+| `git-workflow` | Rebases, conflict resolution, history rewriting, and recovery — reflog-first, never lose committed work |
 
 ### 🔎 research-pro
 
@@ -48,6 +53,8 @@ cp -r plugins/programming-pro/skills/systematic-debugging .claude/skills/
 | `fact-check` | Claim decomposition, tracing to primary sources, explicit verdicts incl. "misleading" with the trick named |
 | `literature-review` | Thematic synthesis across papers, evidence tables, consensus vs. contested, gap analysis |
 | `competitive-analysis` | Decision-framed competitor teardowns: facts-only matrices, positioning reads, strategic implications |
+| `data-analysis` | Question-first analysis: validate data before concluding, right statistic, honest uncertainty; includes a statistical-pitfalls reference |
+| `due-diligence` | Vetting a company/vendor/investment: existence, ownership, financials, legal/sanctions, reputation → risk-weighted verdict |
 | `digital-footprint-audit` | **Defensive, consent-gated** OSINT self-audit: map your own public exposure, score it (sensitivity × discoverability × removability + aggregation risk), and get a prioritized removal + monitoring plan. Includes source-map, risk-scoring, and remediation-playbook references |
 
 ### 🤖 automation-pro
@@ -57,6 +64,7 @@ cp -r plugins/programming-pro/skills/systematic-debugging .claude/skills/
 | `web-automation` | Playwright-driven browsing of any site: durable selectors, condition waits, sessions/logins, incremental building; includes a patterns reference |
 | `data-pipeline` | Resilient fetch→parse→normalize→validate→export pipelines: raw persistence, resumability, quarantine, run summaries |
 | `workflow-automation` | Unattended-grade scheduled jobs: locks, idempotency, failure alerts, change-detection pattern, dead-man's switches |
+| `api-integration` | Production-grade third-party API clients: auth/token lifecycle, timeouts, retry+backoff on transient-only failures, idempotency, pagination, signed idempotent webhooks |
 
 ### 💼 business-pro
 
@@ -66,6 +74,17 @@ cp -r plugins/programming-pro/skills/systematic-debugging .claude/skills/
 | `business-plan` | Lean canvas → full plan; testable claims, unit economics, the honest risks section |
 | `financial-model` | Driver-based models: assumptions/model/outputs separation, cash trough & runway, scenarios, sanity battery |
 | `pitch-deck` | Decision-forcing narratives: belief mapping, slide-by-slide arc, headline test, objection pre-emption |
+| `pricing-strategy` | Value-based pricing over cost-plus: willingness-to-pay, model choice, good-better-best tiering & anchoring |
+| `negotiation` | BATNA/ZOPA/reservation-price prep, interests over positions, trade-don't-concede — practical, not manipulative |
+
+### 🗣 communication-pro
+
+| Skill | What it enforces |
+|---|---|
+| `technical-writing` | Docs for the reader's task: right mode (tutorial/how-to/reference/explanation), scannable structure, runnable examples, README/ADR/RFC/runbook templates |
+| `email-drafting` | Outcome-first emails incl. the hard ones — saying no, pushing back, bad news, chasing, apologizing — clear and kind at once |
+| `meeting-notes` | Transcript → decisions, owned action items, open questions; compression with flagged gaps, not a verbatim retelling |
+| `presentation-builder` | Talks as spoken arguments: tension→resolution arc, one takeaway, show-don't-list slides, delivery notes |
 
 ## Design principles
 
@@ -89,11 +108,12 @@ plugins/
   research-pro/ …
   automation-pro/ …
   business-pro/ …
+  communication-pro/ …
 ```
 
 ## Po polsku (skrót)
 
-Kolekcja profesjonalnych skilli dla Claude w czterech pakietach: **programowanie**, **research**, **automatyzacja** (w tym poruszanie się po dowolnych stronach www przez Playwright) i **biznes**. Instalacja: `/plugin marketplace add nmsmonster/bestskills`, a potem `/plugin install <pakiet>@bestskills` — albo skopiuj wybrany folder skilla do `~/.claude/skills/`. Każdy skill to kompletna metodyka pracy z twardymi zasadami jakości, nie zbiór porad.
+Kolekcja profesjonalnych skilli dla Claude w pięciu pakietach: **programowanie**, **research**, **automatyzacja** (w tym poruszanie się po dowolnych stronach www przez Playwright), **biznes** i **komunikacja**. Instalacja: `/plugin marketplace add nmsmonster/bestskills`, a potem `/plugin install <pakiet>@bestskills` — albo skopiuj wybrany folder skilla do `~/.claude/skills/`. Każdy skill to kompletna metodyka pracy z twardymi zasadami jakości, nie zbiór porad. Claude sam wybiera odpowiedni skill na podstawie pola `description` z nagłówka — dlatego opisy są nasycone wyzwalaczami „użyj gdy…".
 
 ## License
 
