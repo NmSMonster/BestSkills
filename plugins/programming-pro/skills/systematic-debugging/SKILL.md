@@ -64,6 +64,26 @@ Deliver to the user, in this order: root cause (one sentence) → evidence → t
 - Declaring victory on "can't reproduce anymore" without knowing what changed.
 - Trusting memory of the codebase over reading the current code — always re-read the function you're blaming.
 
+## Common rationalizations (recognize these — they're the failure mode, not you being efficient)
+
+| Excuse | Reality |
+|---|---|
+| "This is obviously just a typo/off-by-one, I don't need to reproduce it" | Obvious guesses are wrong often enough that skipping reproduction just means shipping an unverified fix with high confidence — the dangerous kind |
+| "I already know what's wrong from reading the code" | Reading is a hypothesis generator, not evidence. State it as Phase 3's hypothesis and test it like any other |
+| "The user is in a hurry, let me just try a fix" | A guessed fix that misses costs more of their time than 5 minutes of reproduction — you'll be back here after it doesn't work |
+| "It works now, that's good enough" | Without a stated root cause you don't know if it's fixed or just moved/hidden. One sentence of root cause is the actual finish line |
+| "I'll add a broad try/except so it stops crashing" | That's concealment, not a fix — the bug still fires, you just stopped being told about it |
+| "I tested it once and it passed" | One pass after a fix for an intermittent bug is noise, not signal — rerun at the same rate you measured the failure at |
+| "Three hypotheses failed, let me try a fourth similar one" | Three failures in the same direction mean a wrong assumption upstream, not bad luck — zoom out per Phase 3, don't keep drilling the same hole |
+
+## Red flags — stop and go back to the workflow if you notice yourself
+
+- Proposing a fix before you've run the reproduction yourself
+- Changing more than one thing between test runs
+- Explaining *why* the fix should work instead of showing that it does
+- About to remove a debug print/sleep and move on without confirming it was the actual cause
+- Saying "should be fixed now" instead of "fixed: `<root cause>`, verified by `<test>`"
+
 ## Escalation
 
 If after Phase 3 the cause is still unknown and you've spent significant effort: summarize confirmed facts, rejected hypotheses, and the single most-informative next experiment — then present that to the user instead of looping silently.

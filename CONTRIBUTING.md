@@ -42,6 +42,19 @@ When two skills live near each other, their descriptions must draw the boundary 
 
 State what each is *for* and, where useful, what it's *not* for. Overlapping triggers cause the wrong skill to fire — which is worse than no skill.
 
+### An open tension: "when" vs. "what" in the description
+
+Some skill-authoring guides (e.g. obra/superpowers) argue the description should contain *only* trigger conditions and none of the workflow, on the theory that a model shown workflow detail in the description may act on that gist without reading the full body. That's a real risk worth watching for. Our current descriptions lead with a short "what" clause before "Use when…" because, for skills with overlapping domains, the "what" is often exactly what disambiguates two similar triggers (e.g. "review a diff for correctness" vs. "review a diff for security" both trigger on "review this PR"). Resolve the tension in favor of whichever actually fires correctly: if you notice a skill firing on the description's vibe without the body's discipline taking hold, shorten the "what" and sharpen "when" first — don't assume either rule is right in the abstract.
+
+## Discipline skills: rationalization tables and red flags
+
+For skills that enforce a behavioral rule the model might be tempted to shortcut under pressure (debugging without reproducing, shipping unverified work, acting on an account without confirmation) — add two sections after the anti-patterns:
+
+- **Common rationalizations** — a table of `excuse → reality`, one row per plausible shortcut a model (or person) might take. Write the excuse in first person, as it would actually be reasoned ("it's a small change, verification is overkill"), and the reality as the concrete cost of taking it. This does more work than a generic "don't cut corners" line because it names the *specific* self-talk that precedes the shortcut, which makes it recognizable in the moment.
+- **Red flags** — a short list of observable moments to notice mid-task ("about to say 'should work' instead of 'verified'"), each one a trigger to stop and return to the workflow.
+
+Not every skill needs this — it earns its place on skills where the failure mode is *knowing the rule and skipping it anyway under pressure*, not on skills that are mostly informational (e.g. `market-analysis` doesn't need a rationalization table; `self-verification` and `operator-governance` do).
+
 ## The body — what good looks like
 
 Structure varies by skill, but the best ones share this shape:

@@ -55,6 +55,25 @@ Sometimes you genuinely can't verify (no runtime, no access, no data). Then:
 - Give the user the exact steps *they* can run to verify.
 - Never let inability-to-verify silently become an implied "it's fine."
 
+## Common rationalizations (recognize these — they're the failure mode, not you being efficient)
+
+| Excuse | Reality |
+|---|---|
+| "It's a small change, verification is overkill" | Small changes are exactly where verification is cheap and skipped anyway — the cost asymmetry favors checking |
+| "The logic is straightforward, I can see it's correct" | Reading your own code confirms what you intended, not what it does — that's the exact blind spot this skill exists to catch |
+| "I'm confident this works" | Confidence is a feeling, not evidence. Name the command/test that produced the evidence, or downgrade the claim |
+| "I ran out of easy ways to verify this part" | Say so explicitly — "I couldn't verify X" is honest; silently proceeding as if verified is not |
+| "The user seems to want a quick answer, not a caveat" | A wrong confident answer costs more of their time than one honest sentence of hedging |
+| "Tests pass, so it's done" | Tests only prove what they assert — check they exercise the actual change, and that edge cases from the request are covered, not just the happy path |
+| "I already explained why it should work" | An explanation is a prediction. Verification is watching the prediction come true |
+
+## Red flags — stop and go back to the checklist if you notice yourself
+
+- Writing "done", "fixed", or "works" without a preceding sentence describing what you ran or checked
+- About to skip the edge-case pass because the happy path looked clean
+- Feeling rushed and tempted to skip the pre-delivery checklist "just this once"
+- Describing what the code *should* do instead of what you *observed* it doing
+
 ## The one-line test
 
 Before every "done", ask: *"If the user runs this right now, will it work — and do I actually know that, or am I hoping?"* If hoping, either go verify, or say you're hoping. That honesty is what makes you trustworthy on the next task.
